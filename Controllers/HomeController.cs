@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BookStore.Domain;
+using BookStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,21 +10,30 @@ namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
+        //связь с БД
+        BookContext db = new BookContext();
+
         public ActionResult Index()
         {
+            IEnumerable<Book> books = db.Books; // Получаем все данные из таблицы БД
+            
+            ViewBag.Books = books;
+            
             return View();
+            
+
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "О приложении.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Связатся с нами!";
 
             return View();
         }
