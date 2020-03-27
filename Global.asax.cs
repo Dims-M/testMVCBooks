@@ -16,7 +16,7 @@ namespace BookStore
         protected void Application_Start()
         {
             //запуск создание и первоночальное заполнение БД
-            Database.SetInitializer(new BookDbInitializer());
+           // Database.SetInitializer(new BookDbInitializer());
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

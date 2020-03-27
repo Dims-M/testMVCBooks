@@ -1,18 +1,18 @@
 ﻿@{
-//ViewBag.Title = "Главная страница";
-Layout = null;
+    //ViewBag.Title = "Главная страница";
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">*********.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">*********.</p>
+       
+        <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+    </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
+    @*<div class="col-md-4">*@
+        <h2>Начало страницы</h2>
             ******
             @foreach (var temp in ViewBag.Books)
             {
@@ -21,13 +21,13 @@ Layout = null;
                  <td><p>@temp.Name</p></td>
                  <td><p>@temp.Author</p></td>
                  <td><p>@temp.Price</p></td>
-                 @*<td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>*@
+                 <td><p><a href="/Home/Buy/@temp.Id">Купить</a></p></td>
                  
             </tr>
         }
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
+            
+            @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        @*</div>*@
     <div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
