@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace BookStore.Controllers
 {
@@ -33,7 +34,9 @@ namespace BookStore.Controllers
         }
 
         [HttpPost] //получаем форму
-        public ActionResult Buy(Purchase purchase) //получаем модель данных из формы(введеными пользователями) 
+        public ActionResult Buy(Purchase purchase)
+        //получаем модель данных из формы(введеными пользователями) 
+        //и создаем модель класса Purchase и заполняем ее введеными данными
         {
             purchase.Date = DateTime.Now;
             // добавляем информацию о покупке в базу данных
@@ -51,12 +54,21 @@ namespace BookStore.Controllers
 
             return View();
         }
-
+       
         public ActionResult Contact()
         {
             ViewBag.Message = "Связатся с нами!";
 
             return View();
+        }
+
+        public ActionResult MyIP()
+        {
+           // RequestContext requestContext = new RequestContext(); 
+            ViewBag.Message = "Текущий IP адрес";
+            // string ip = requestContext.HttpContext.Request.UserHostAddress;
+            string ip = HttpContext.Request.UserHostAddress;
+            return Content("<h2>Ваш адрес, " + ip+ " </h2>");
         }
     }
 }

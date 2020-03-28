@@ -10,8 +10,9 @@
     <nav>
         <ul class="menu">
             <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-            <li>@Html.ActionLink("О Приложении", "Index", "About")</li>
-            <li>@Html.ActionLink("Контакты", "Index", "Contact")</li>
+            <li>@Html.ActionLink("О Приложении", "About", "Home")</li>
+            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Текущий IP", "MyIP", "Home")</li>
         </ul>
     </nav>
     @RenderBody()
